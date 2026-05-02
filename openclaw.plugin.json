@@ -1,0 +1,62 @@
+{
+  "id": "openclaw-memory-plus",
+  "name": "OpenClaw Memory Plus",
+  "description": "Upgrade-safe, file-first memory plugin with semantic, episodic, reflective, and identity layers.",
+  "version": "1.0.0",
+  "kind": "memory",
+  "uiHints": {
+    "autoRecall": {
+      "label": "Auto Recall",
+      "help": "Inject a bounded recall frame before each agent run."
+    },
+    "autoCapture": {
+      "label": "Auto Capture",
+      "help": "Capture candidate memories from turns and tool results."
+    },
+    "enableSlowPathLifecycle": {
+      "label": "Slow Path Lifecycle",
+      "help": "Allow best-effort promotion/summarization on lifecycle flush hooks."
+    },
+    "defaultAgentId": {
+      "label": "Default Agent Id",
+      "placeholder": "main",
+      "help": "Fallback agent id when runtime metadata does not provide one."
+    },
+    "storeRoot": {
+      "label": "Store Root Override",
+      "placeholder": "agents/{agentId}/memory-plus",
+      "help": "Optional path template relative to the OpenClaw home."
+    },
+    "debug": {
+      "label": "Debug Logging",
+      "help": "Emit verbose plugin logs."
+    }
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "autoRecall": {
+        "type": "boolean"
+      },
+      "autoCapture": {
+        "type": "boolean"
+      },
+      "enableSlowPathLifecycle": {
+        "type": "boolean"
+      },
+      "defaultAgentId": {
+        "type": "string",
+        "minLength": 1
+      },
+      "storeRoot": {
+        "type": "string",
+        "minLength": 1
+      },
+      "debug": {
+        "type": "boolean"
+      }
+    },
+    "required": []
+  }
+}

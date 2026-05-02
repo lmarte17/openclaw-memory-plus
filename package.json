@@ -1,0 +1,19 @@
+{
+  "name": "@local/openclaw-memory-plus",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Plugin-only, file-backed semantic/episodic/reflective/identity memory for OpenClaw",
+  "license": "UNLICENSED",
+  "peerDependencies": {
+    "openclaw": ">=2026.3.13"
+  },
+  "scripts": {
+    "check": "node --check index.js && node --check lib/*.js && node --test tests/*.test.js",
+    "test": "node --test tests/*.test.js"
+  },
+  "openclaw": {
+    "extensions": [
+      "./index.js"
+    ]
+  }
+}
