@@ -21,12 +21,12 @@ export default {
     registerTools(api, runtime);
 
     if (config.autoRecall) {
-      api.on("before_agent_start", buildRecallHandler(runtime));
+      api.on("before_prompt_build", buildRecallHandler(runtime));
     }
 
     if (config.autoCapture) {
       api.on("agent_end", buildCaptureHandler(runtime));
-      api.on("tool_result", buildCaptureHandler(runtime, { sourceType: "tool" }));
+      api.on("after_tool_call", buildCaptureHandler(runtime, { sourceType: "tool" }));
     }
 
     api.registerService({

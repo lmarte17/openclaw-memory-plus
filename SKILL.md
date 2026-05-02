@@ -23,9 +23,9 @@ These run automatically without any tool call:
 
 | Hook | Trigger | What it does | Config gate |
 |------|---------|-------------|-------------|
-| `before_agent_start` | Before every prompt | Recalls relevant memory and prepends it to context | `autoRecall: true` |
+| `before_prompt_build` | Before every prompt | Recalls relevant memory and prepends it to context | `autoRecall: true` |
 | `agent_end` | When a session ends | Captures conversation text as memory candidates | `autoCapture: true` |
-| `tool_result` | After every tool call | Captures tool output as memory candidates | `autoCapture: true` |
+| `after_tool_call` | After every tool call | Captures tool output as memory candidates | `autoCapture: true` |
 
 Memory captured passively lands in a **candidate queue** (JSONL file). Candidates are not yet durable memory — they must be promoted.
 

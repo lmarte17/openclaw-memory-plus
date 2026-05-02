@@ -52,6 +52,23 @@ openclaw plugins enable openclaw-memory-plus
 openclaw config set plugins.slots.memory openclaw-memory-plus
 ```
 
+For non-bundled installs on current OpenClaw releases, allow the passive hooks to read conversation content and inject prompt context:
+
+```json
+{
+  "plugins": {
+    "entries": {
+      "openclaw-memory-plus": {
+        "hooks": {
+          "allowConversationAccess": true,
+          "allowPromptInjection": true
+        }
+      }
+    }
+  }
+}
+```
+
 ## Configuration
 
 The plugin uses `plugins.entries.openclaw-memory-plus.config` in `~/.openclaw/openclaw.json`.
